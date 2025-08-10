@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+
+/**Home section**/
+section{
+    margin-bottom: 10px;
+    height: 100vh;
+    
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    background-image: linear-gradient(45deg, green,  yellow );
+    
+}
+.menu-list{
+    display: flex;
+    list-style-type: none;
+}
+.menu-list-items{
+    padding: 0 1rem;
+    font-size: 1.5rem;
+
+}
+
+.menu-list-items a{
+    text-decoration: none;
+    color: white;
+}
+
+.menu-list-items a:hover{
+    color: green;
+
+}
+
+
+.hero{
+    padding: 30vh;
+    text-align: center;
+}
+
+.main-title{
+    font-size: 4rem;
+    color: green;
+}
+
+
+.hero-btn{
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 16px;
+    background-color: lightgreen;
+    color: white;
+    font-size: 1rem;
+    transition: .3s ease-in-out;
+}
+
+.hero-btn:hover{
+    color: black;
+    background-color: green;
+}
+
+/**About section**/
+
+
+.about-mission{
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background-image: linear-gradient(90deg, yellow,green);
+    height: 100vh;    
+}
+
+.text{
+    line-height: 2rem;
+    padding: 0px 10px 10px 10px;
+}
+
+.title{
+    margin: 10px 0;
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+/**Services section**/
+
+.services{
+    background-color: rgb(134, 226, 226);
+}
+.services-text{
+    justify-content: center;
+    text-align: center;
+}
+.aluminium-pics{
+    display: flex;
+    justify-content: space-between;
+}
+.aluminium-pic{
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #cccccc;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    transition: 0.5s ease-in-out;
+}
+.aluminium-pic:hover{
+    height: 310px;
+    width: 310px;
+}
+
+/**social media downloader section**/
+
+header {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+}
+
+main {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    }
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.result {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #0066cc;
+    text-align: center;
+}
+
+.notice {
+    font-size: 0.9rem;
+    color: #999;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#adBlockMessage {
+    display: none;
+    background: #ffe5e5;
+    color: #cc0000;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+
+
+
+/**Contact section**/
+
+.contact-area{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+}
+.contact-me{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.form-area{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-area input{
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.form-area textarea{
+    width: 300px;
+    
+}
+
+/**footer section**/
+
+footer {
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: 600;
+  background-color: #f9f9f9;
+  border-top: 2px solid #2E6DA4;
+}
+
+
+.contact a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
