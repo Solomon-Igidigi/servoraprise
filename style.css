@@ -2,13 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: black;
+    
 }
 
 /**Home section**/
 section{
     margin-bottom: 10px;
-    height: 100vh;
     
 }
 
@@ -17,7 +16,7 @@ section{
     justify-content: space-between;
     padding: 10px 20px;
     align-items: center;
-    background-image: linear-gradient(45deg, green,  yellow );
+    
     
 }
 .menu-list{
@@ -32,7 +31,7 @@ section{
 
 .menu-list-items a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .menu-list-items a:hover{
@@ -48,7 +47,7 @@ section{
 
 .main-title{
     font-size: 4rem;
-    color: green;
+    
 }
 
 
@@ -56,15 +55,12 @@ section{
     padding: 10px 20px;
     border-radius: 8px;
     margin-top: 16px;
-    background-color: lightgreen;
-    color: white;
     font-size: 1rem;
     transition: .3s ease-in-out;
 }
 
 .hero-btn:hover{
     color: black;
-    background-color: green;
 }
 
 /**About section**/
@@ -74,7 +70,6 @@ section{
     display: flex;
     padding: 10px 20px;
     justify-content: space-between;
-    background-image: linear-gradient(90deg, yellow,green);
     height: 100vh;    
 }
 
@@ -92,8 +87,12 @@ section{
 
 /**Services section**/
 
-.services{
-    background-color: rgb(134, 226, 226);
+.services h2{
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    
 }
 .services-text{
     justify-content: center;
@@ -145,17 +144,6 @@ input[type="text"] {
     margin-bottom: 1rem;
     }
 
-button {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
 button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
@@ -198,6 +186,15 @@ button:disabled {
 .contact-me{
     display: flex;
     flex-direction: column;
+}
+.contact-box{
+    margin-bottom: 30px;
+
+    
+}
+.fa-solid{
+    color: green;
+    font-size: 30px;
 }
 
 
@@ -247,3 +244,24 @@ footer {
   font-size: 0.85em;
   opacity: 0.7;
 }
+
+/* For screens up to 600px wide */
+
+@media (max-width: 600px) {
+    .about-mission{
+        flex-direction: column;
+    }
+  
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .about-mission{
+        flex-direction: column;
+    }
+   .aluminium-pics{
+    flex-direction: column;
+    align-items: center;
+   }
+ 
+}
+
