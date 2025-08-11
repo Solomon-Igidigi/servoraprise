@@ -1,46 +1,62 @@
+// ===== Fade & Zoom Animation Observer =====
+const sections = document.querySelectorAll("section");
 
-    const downloadBtn = document.getElementById('downloadBtn');
-    const videoUrlInput = document.getElementById('videoUrl');
-    const resultBox = document.getElementById('resultBox');
-    const adBlockMessage = document.getElementById('adBlockMessage');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const fadeItems = entry.target.querySelectorAll(".fade-item");
+            fadeItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add("visible");
+                }, index * 150);
+            });
+        }
+    });
+}, { threshold: 0.2 });
 
-    const supportedSites = [
-      'youtube.com', 'youtu.be',
-      'tiktok.com',
-      'instagram.com',
-      'facebook.com',
-      'fb.watch',
-      'x.com', 'twitter.com'
-    ];
+sections.forEach(section => {
+    const children = section.querySelectorAll("*");
+    children.forEach(child => {
+        if (child.tagName.toLowerCase() === "img") {
+            child.classList.add("fade-item", "img-zoom");
+        } else {
+            child.classList.add("fade-item");
+        }
+    });
+    observer.observe(section);
+});
 
-    function detectAdBlock() {
-      const adBlock = window.canRunAds === undefined;
-      downloadBtn.disabled = adBlock;
-      adBlockMessage.style.display = adBlock ? 'block' : 'none';
-      return !adBlock;
+// ===== Navbar Scroll Gradient Effect =====
+document.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+        navbar.style.background = "linear-gradient(90deg, var(--color-blue), var(--color-purple))";
+    } else {
+        navbar.classList.remove("scrolled");
+        navbar.style.background = "rgba(41, 128, 185, 0.85)";
     }
+});
 
-    // Enable download button only for supported links
-    videoUrlInput.addEventListener('input', () => {
-      const url = videoUrlInput.value.trim();
-      const isValid = supportedSites.some(site => url.includes(site));
-      downloadBtn.disabled = !isValid || !detectAdBlock();
+// ===== Button Hover Ripple Effect (Green / Orange) =====
+document.querySelectorAll(".btn-primary, .btn-secondary, .hero-btn").forEach(button => {
+    button.addEventListener("click", function (e) {
+        const ripple = document.createElement("span");
+        ripple.classList.add("ripple");
+        ripple.style.left = `${e.clientX - e.target.offsetLeft}px`;
+        ripple.style.top = `${e.clientY - e.target.offsetTop}px`;
+
+        // Ripple color matches theme
+        if (this.classList.contains("btn-primary")) {
+            ripple.style.backgroundColor = "var(--color-green)";
+        } else if (this.classList.contains("btn-secondary")) {
+            ripple.style.backgroundColor = "var(--color-orange)";
+        } else {
+            ripple.style.backgroundColor = "var(--color-pink)";
+        }
+
+        this.appendChild(ripple);
+
+        setTimeout(() => ripple.remove(), 600);
     });
-
-    // Main download logic
-    downloadBtn.addEventListener('click', () => {
-      const url = videoUrlInput.value.trim();
-      if (!url) {
-        alert("Please enter a valid video URL.");
-        return;
-      }
-
-      // Show message to user
-      resultBox.innerHTML = "🔄 Redirecting to secure download page...";
-
-      // Open external service that handles download
-      window.open(`https://www.vevioz.com/en/youtube-to-mp4?url=${encodeURIComponent(url)}`, '_blank');
-
-      // Confirm to user
-      resultBox.innerHTML = "✅ You're being redirected. If nothing opens, please allow pop-ups.";
-    });
+});
